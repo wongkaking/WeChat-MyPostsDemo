@@ -34,6 +34,7 @@ class FourPhotosTableViewCell: UITableViewCell {
         theUserName.topAnchor.constraint(equalTo: theImage.topAnchor).isActive = true
         
         contentView.addSubview(theText)
+        theText.numberOfLines = 0
         theText.translatesAutoresizingMaskIntoConstraints = false
         theText.leadingAnchor.constraint(equalTo: theImage.trailingAnchor, constant: 15.0).isActive = true
         theText.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15.0).isActive = true
