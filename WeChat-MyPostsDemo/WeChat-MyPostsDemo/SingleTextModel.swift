@@ -1,21 +1,21 @@
-//
-//  SingleTextModel.swift
-//  WeChat-MyPostsDemo
-//
-//  Created by kary on 2018/8/21.
-//  Copyright © 2018年 kary. All rights reserved.
-//
-
 import UIKit
 
 class SingleTextModel: NSObject {
+    enum singleCellTpye {
+        case SingleText
+        case SinglePhoto
+    }
+    
+    let type : singleCellTpye
+    
     
     var imageName : String
     var userName : String
     var textLabel : String?
     var imgName : String?
     
-    init(image:String, userName:String, theTextLable:String, img:String?) {
+    init(type : singleCellTpye, image:String, userName:String, theTextLable:String, img:String?) {
+        self.type = type
         imageName = image
         self.userName = userName
         self.textLabel = theTextLable
