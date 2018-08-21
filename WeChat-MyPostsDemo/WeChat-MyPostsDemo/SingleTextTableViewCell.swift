@@ -4,7 +4,7 @@ class SingleTextTableViewCell: UITableViewCell {
     private var theImage = UIImageView()
     private var theUserName = UILabel()
     private var theTextLable = UILabel()
-    private var theImg = UIImageView()
+
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -37,14 +37,8 @@ class SingleTextTableViewCell: UITableViewCell {
         theTextLable.topAnchor.constraint(equalTo: theUserName.bottomAnchor, constant: 15.0).isActive = true
         theTextLable.leadingAnchor.constraint(equalTo: theImage.trailingAnchor, constant: 15.0).isActive = true
         theTextLable.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15.0).isActive = true
-//        theTextLable.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10.0).isActive = true
+        theTextLable.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10.0).isActive = true
         
-        contentView.addSubview(theImg)
-        theImg.translatesAutoresizingMaskIntoConstraints = false
-        theImg.topAnchor.constraint(equalTo: theTextLable.bottomAnchor, constant: 15.0).isActive = true
-        theImg.leadingAnchor.constraint(equalTo: theImage.trailingAnchor, constant: 15.0).isActive = true
-        theImg.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10.0).isActive = true
-        theImg.widthAnchor.constraint(equalToConstant: 100).isActive = true
         
     }
       
