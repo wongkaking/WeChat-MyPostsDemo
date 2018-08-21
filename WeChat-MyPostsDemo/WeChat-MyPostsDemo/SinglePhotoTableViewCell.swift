@@ -48,7 +48,7 @@ class SinglePhotoTableViewCell: UITableViewCell {
         
         contentView.addSubview(img)
         img.translatesAutoresizingMaskIntoConstraints = false
-        img.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
+        img.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15.0).isActive = true
         img.topAnchor.constraint(equalTo: theTextLable.bottomAnchor, constant: 15.0).isActive = true
         img.leadingAnchor.constraint(equalTo: theImage.trailingAnchor, constant: 15.0).isActive = true
         img.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15.0).isActive = true
