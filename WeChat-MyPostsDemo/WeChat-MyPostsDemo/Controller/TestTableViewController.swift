@@ -10,7 +10,6 @@ class TestTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        navigationItem.title =
         
         tableView = UITableView(frame: CGRect(x: 0, y: 0, width: view.bounds.size.width, height: view.bounds.size.height), style: .grouped)
         tableView.tableFooterView = UIView()

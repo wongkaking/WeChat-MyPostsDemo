@@ -43,9 +43,9 @@ class SingleTextTableViewCell: UITableViewCell {
     }
       
     func setValueForSingletText(img: UIImage, userName: String, text: String) {
-        self.theTextLable.text = text
-        self.theUserName.text = userName
-        self.theImage.image = img
+        theTextLable.text = text
+        theUserName.text = userName
+        theImage.image = img
     }
 
 }
