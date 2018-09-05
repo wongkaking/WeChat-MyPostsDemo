@@ -4,6 +4,8 @@ class MyPostsController: UIViewController,UITableViewDelegate, UITableViewDataSo
     let singleTextReuse = "singleText"
     let singPhotoReuse = "singlePhoto"
     let fourPhotosReuse = "four"
+    let manyPhotosReuse = "many"
+    
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refreshValueChange(sender:)), for: .valueChanged)
@@ -33,6 +35,16 @@ class MyPostsController: UIViewController,UITableViewDelegate, UITableViewDataSo
             guard let cell = tableView.dequeueReusableCell(withIdentifier: fourPhotosReuse)as? FourPhotosTableViewCell else { return UITableViewCell() }
             cell.setValueForFourPhoto(image: UIImage(named: model.imageName)!, userName: model.userName, theText: model.textLabel, im1: UIImage(named: model.im1!)!, im2: UIImage(named: model.im2!)!, im3: UIImage(named: model.im3!)!, im4: UIImage(named: model.im4!)!)
             return cell
+        case .ManyPhotos:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: manyPhotosReuse, for: indexPath) as? ManyPhotosTableViewCell else { return UITableViewCell()}
+//            let photoView = PhotosView()
+//            photoView.setUpView()
+//            photoView.setValueForPicArray(picAry: model.imageArray!)
+//            cell.setValueForManyPhotos(image: UIImage(named: model.imageName)!, userName: model.userName, theText: model.textLabel, picArray: model.imageArray)
+            cell.setValueForManyPhotos(model: model)
+//            cell.setValueForManyPhotos(model: test5)
+//            view.addSubview(photoView)
+            return cell
         }
         
     }
@@ -48,11 +60,11 @@ class MyPostsController: UIViewController,UITableViewDelegate, UITableViewDataSo
         tableView?.register(SingleTextTableViewCell.self, forCellReuseIdentifier: singleTextReuse)
         tableView?.register(SinglePhotoTableViewCell.self, forCellReuseIdentifier: singPhotoReuse)
         tableView?.register(FourPhotosTableViewCell.self, forCellReuseIdentifier: fourPhotosReuse)
+        tableView?.register(ManyPhotosTableViewCell.self, forCellReuseIdentifier: manyPhotosReuse)
         tableView?.addSubview(refreshControl)
         refreshControl.beginRefreshing()
         testModel = nil
         loadData()
-        
     }
     
     @objc func refreshValueChange(sender: UIRefreshControl) {
@@ -65,16 +77,19 @@ class MyPostsController: UIViewController,UITableViewDelegate, UITableViewDataSo
         let test2 = TheModel(type: .SingleText, image: "image", userName: "test2", theTextLable: "111111111111111112222222222222233333333333",  img1: nil, img2: nil, img3: nil, img4: nil)
         let test3 = TheModel(type: .SingleText, image: "image", userName: "test2", theTextLable: "111111111111111112222222222222233333333333111111111111111112222222222222233333333333111111111111111112222222222222233333333333111111111111111112222222222222233333333333111111111111111112222222222222233333333333111111111111111112222222222222233333333333111111111111111112222222222222233333333333111111111111111112222222222222233333333333111111111111111112222222222222233333333333111111111111111112222222222222233333333333",  img1: nil, img2: nil, img3: nil, img4: nil)
         let test4 = TheModel(type: .SinglePhoto, image: "image", userName: "test4", theTextLable: "111111111111111112222222222222233333333333111111111111111112222222222222233333333333111111111111111112222222222222233333333333111111111111111112222222222222233333333333111111111111111112222222222222233333333333111111111111111112222222222222233333333333111111111111111112222222222222233333333333111111111111111112222222222222233333333333111111111111111112222222222222233333333333111111111111111112222222222222233333333333",  img1: "image", img2: nil, img3: nil, img4: nil)
+        
+        let test5 = TheModel(type: .ManyPhotos, image: "image", userName: "test5", theText: "11111111111111111111", imgAry: ["image2", "image2", "image2", "image2", "image2", "image2"])
+        
+        let test6 = TheModel(type: .ManyPhotos, image: "image", userName: "test6", theText: "12323231", imgAry: ["image2", "image2", "image2", "image2", "image2", "image2"])
+        
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
             print(Thread.current)
             self.refreshControl.endRefreshing()
-            self.testModel = addData ? [test1, test2, test3, test4,test1, test2, test3, test4] : [test1, test2, test3, test4]
+//            self.testModel = addData ? [test1, test2, test3, test4,test1, test2, test3, test4] : [test1, test2, test3, test4, test5, test6]
+            self.testModel = [test1, test2, test3, test4,test6,test5, test2, test3, test4, test1, test2, test3, test4,test1, test5, test2, test3, test4, test1, test2, test3,test5, test4,test1, test2, test3, test4]
             self.tableView?.reloadData()
         })
     }
-    
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        print(scrollView.contentOffset.y)
-//    }
 }
 

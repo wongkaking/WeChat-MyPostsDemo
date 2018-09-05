@@ -21,6 +21,8 @@
 		421CC10C212C2302006E40D2 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421CC10B212C2302006E40D2 /* MainTableViewCell.swift */; };
 		421CC10E212C2305006E40D2 /* AnotherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421CC10D212C2305006E40D2 /* AnotherTableViewCell.swift */; };
 		421CC110212C230F006E40D2 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421CC10F212C230F006E40D2 /* TestModel.swift */; };
+		427132DE212E5E9B005C726E /* ManyPhotosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427132DD212E5E9B005C726E /* ManyPhotosTableViewCell.swift */; };
+		427132E0212E5F54005C726E /* PhotosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427132DF212E5F54005C726E /* PhotosView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		421CC10B212C2302006E40D2 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		421CC10D212C2305006E40D2 /* AnotherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnotherTableViewCell.swift; sourceTree = "<group>"; };
 		421CC10F212C230F006E40D2 /* TestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
+		427132DD212E5E9B005C726E /* ManyPhotosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManyPhotosTableViewCell.swift; sourceTree = "<group>"; };
+		427132DF212E5F54005C726E /* PhotosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,8 @@
 				421CC0DF212C01B8006E40D2 /* FourPhotosTableViewCell.swift */,
 				421CC0DD212BF3A0006E40D2 /* SinglePhotoTableViewCell.swift */,
 				421CC0D7212BB309006E40D2 /* SingleTextTableViewCell.swift */,
+				427132DD212E5E9B005C726E /* ManyPhotosTableViewCell.swift */,
+				427132DF212E5F54005C726E /* PhotosView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -191,6 +197,8 @@
 				421CC0DA212BC2EB006E40D2 /* TheModel.swift in Sources */,
 				421CC0C8212BB0E4006E40D2 /* MyPostsController.swift in Sources */,
 				421CC0DE212BF3A0006E40D2 /* SinglePhotoTableViewCell.swift in Sources */,
+				427132DE212E5E9B005C726E /* ManyPhotosTableViewCell.swift in Sources */,
+				427132E0212E5F54005C726E /* PhotosView.swift in Sources */,
 				421CC0C6212BB0E4006E40D2 /* AppDelegate.swift in Sources */,
 				421CC10A212C22FF006E40D2 /* ViewController.swift in Sources */,
 				421CC0E0212C01B8006E40D2 /* FourPhotosTableViewCell.swift in Sources */,
